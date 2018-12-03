@@ -1,0 +1,21 @@
+https://api.telegram.org/bot<YourBOTToken>/getUpdates
+
+token: 
+
+chatid: 
+
+
+
+
+
+#!/usr/bin/python
+import requests,telegram
+
+token = ""
+chat_id = ""
+
+a = "Messaggio di test da KNX"
+
+bot = telegram.Bot(token=token)
+bot.sendMessage(chat_id=chat_id, text=a)
+
